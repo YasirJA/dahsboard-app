@@ -11,7 +11,7 @@ const Menu = (props) => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, backgroundColor: "#E5EAF2" }}>
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="static"
         sx={{
@@ -21,7 +21,9 @@ const Menu = (props) => {
           borderColor: "grey.300",
         }}
       >
-        <Toolbar sx={{ justifyContent: "space-between" }}>
+        <Toolbar
+          sx={{ justifyContent: "space-between", backgroundColor: "#fff" }}
+        >
           <Button
             variant="contained"
             component={Link}

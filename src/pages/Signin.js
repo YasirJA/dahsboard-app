@@ -31,8 +31,9 @@ const SignIn = (props) => {
         minHeight: "80vh",
       }}
     >
-      <Card sx={{ width: "30vw", height: "30vh", backgroundColor: "#E5EAF2" }}>
+      <Card sx={{ width: "40%", height: "40%", p: 1 }}>
         <CardContent>
+          Welcome
           <form onSubmit={handleSignIn}>
             <div>
               <TextField
@@ -43,7 +44,7 @@ const SignIn = (props) => {
                 margin="normal"
                 size="small"
                 onChange={(event) => setEmail(event.target.value)}
-                sx={{ backgroundColor: "#fff" }}
+                sx={{ backgroundColor: "#fff", width: "70%" }}
               />
             </div>
             <div>
@@ -55,7 +56,7 @@ const SignIn = (props) => {
                 margin="normal"
                 size="small"
                 onChange={(event) => setPassword(event.target.value)}
-                sx={{ backgroundColor: "#fff" }}
+                sx={{ backgroundColor: "#fff", width: "70%" }}
               />
             </div>
             {error && <p>{error}</p>}
@@ -64,9 +65,8 @@ const SignIn = (props) => {
                 variant="contained"
                 color="primary"
                 type="submit"
-                size="small"
                 margin="normal"
-                sx={{ width: "47%" }}
+                sx={{ width: "70%" }}
               >
                 SignIn
               </Button>

@@ -82,7 +82,14 @@ const Dashboard = (props) => {
 
   return (
     <div className="App">
-      <div style={{ width: "50vw", margin: "auto" }}>
+      <h1>Chart View</h1>
+      <div
+        style={{
+          width: "50vw",
+          margin: "auto",
+          padding: "20px",
+        }}
+      >
         <h2>Bar Chart</h2>
         <canvas id="bar-chart"></canvas>
       </div>
