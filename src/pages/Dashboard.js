@@ -8,7 +8,6 @@ const Dashboard = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch data from the 'chart_data' table based on the account ID
         const { data, error } = await props.supabase
           .from("chart_data")
           .select("*")
@@ -30,7 +29,6 @@ const Dashboard = (props) => {
       barChartRef.current.destroy();
     }
 
-    // Aggregate sales data for each month
     const months = [
       "January",
       "February",
@@ -44,7 +42,8 @@ const Dashboard = (props) => {
       (month) => chartData.find((item) => item.month === month)?.sales || 0
     );
 
-    // Create bar chart
+    const maxValue = Math.max(...salesData);
+
     const barChartContext = document
       .getElementById("bar-chart")
       .getContext("2d");
@@ -54,8 +53,7 @@ const Dashboard = (props) => {
         {
           label: "Sales",
           data: salesData,
-          backgroundColor: "rgba(75,192,192)",
-          borderColor: "rgba(75,192,192)",
+          backgroundColor: "#1e88e5",
           borderWidth: 1,
         },
       ],
@@ -82,7 +80,6 @@ const Dashboard = (props) => {
 
   return (
     <div className="App">
-      <h1>Chart View</h1>
       <div
         style={{
           width: "50vw",
